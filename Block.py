@@ -25,4 +25,14 @@ class Block:
 # has index of 0 and a random set previous hash since it is first
 def create_genesis_block():
 	return Block(0, date.datetime.now(), "Genesis Block, will be worth millions", "0")
-	
+
+#creating every consecutive block
+def next_block(last_block):
+	this_index = last_block.index + 1
+	this_timestamp = date.datetime.now()
+	this_data = "Test" + str(this_index)
+	this_hash = last_block.hash
+	return Block(this_index, this_timestamp, this_data, this_hash)
+
+
+
