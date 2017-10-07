@@ -2,10 +2,9 @@
 
 # Implementation
 ```python
-chain = chain()
-chain.getTop() # should return Genesis block
-genesis_hash = hash(chain.getTop)
-chain.addBlock('This is my second block')
-next_block_hash = chain.getTop().previous_hash # returns hash of the genesis block
-genesis_hash == next_block_hash
+c = chain()
+c.getTop() # should return Genesis block
+for i in range(50):
+        c.newBlock('Hello World, I am the {}th block in the chain'.format(i+1)')
+print(chain.length)
 ```
